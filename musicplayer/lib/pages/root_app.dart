@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'home_page.dart';
 
 class RootApp extends StatefulWidget {
   const RootApp({ Key? key }) : super(key: key);
@@ -15,8 +16,46 @@ class _RootAppState extends State<RootApp> {
     return Scaffold(
       backgroundColor: Colors.black,
       bottomNavigationBar: getFooter(),
+      body: getBody(),
     );
   }
+  Widget getBody() {
+    return IndexedStack(
+      index: activeTab,
+      children: [
+        HomePage(),
+        Center(
+          child: Text('Home', style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),),
+        ),
+        Center(
+          child: Text('Library', style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),),
+        ),
+        Center(
+          child: Text('Search', style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),),
+        ),
+        Center(
+          child: Text('Setting', style: TextStyle(
+            fontSize: 20,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),),
+        ),
+      ],
+    );
+  }
+
   Widget getFooter() {
     List items = [
       FeatherIcons.home,
@@ -36,7 +75,7 @@ class _RootAppState extends State<RootApp> {
             return IconButton(
               icon: Icon(
                 items[index],
-                color: Colors.white
+                color: activeTab == index ? Colors.green : Colors.white,
               ),
               onPressed: () {
                 setState(() {
