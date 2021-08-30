@@ -10,6 +10,15 @@ class RootApp extends StatefulWidget {
 class _RootAppState extends State<RootApp> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Colors.black,
+      bottomNavigationBar: getFooter(),
+    );
+  }
+  Widget getFooter() {
+    return Container(
+      height: 80,
+      decoration: BoxDecoration(color: Colors.white),
+    );
   }
 }
