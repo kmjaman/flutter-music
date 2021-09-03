@@ -90,6 +90,34 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 20,),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 30),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(10, (index) {
+                      return Padding(
+                        padding: const EdgeInsets.only(right: 30),
+                        child: GestureDetector(
+                          onTap: (){
+                          },
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 180,
+                                height: 180,
+                                decoration: BoxDecoration(color: Colors.greenAccent),
+                              )
+                            ]
+                          ),
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+              )
             ],
           ),
         ],
