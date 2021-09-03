@@ -97,7 +97,7 @@ class _HomePageState extends State<HomePage> {
                   padding: const EdgeInsets.only(left: 30),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: List.generate(10, (index) {
+                    children: List.generate(songs.length - 5, (index) {
                       return Padding(
                         padding: const EdgeInsets.only(right: 30),
                         child: GestureDetector(
@@ -108,7 +108,12 @@ class _HomePageState extends State<HomePage> {
                               Container(
                                 width: 180,
                                 height: 180,
-                                decoration: BoxDecoration(color: Colors.greenAccent),
+                                decoration: BoxDecoration(
+                                  image: DecorationImage(image: AssetImage(songs[index]['img']),
+                                  fit: BoxFit.cover),
+                                  color: Colors.greenAccent,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
                               )
                             ]
                           ),
