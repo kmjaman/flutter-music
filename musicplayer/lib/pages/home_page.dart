@@ -60,6 +60,7 @@ class _HomePageState extends State<HomePage> {
                             });
                           },
                           child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 song_type_1[index],
@@ -68,7 +69,19 @@ class _HomePageState extends State<HomePage> {
                                   color: activeMenu1 == index ? Colors.greenAccent : Colors.grey,
                                   fontWeight: FontWeight.w600,
                                 ),
-                              )
+                              ),
+                              SizedBox(
+                                height: 3,                   
+                              ),
+                              activeMenu1 == index
+                                ? Container(
+                                  width: 10,
+                                  height: 3,
+                                  decoration: BoxDecoration(
+                                    color: Colors.greenAccent,
+                                    borderRadius: BorderRadius.circular(5))
+                                )
+                              : Container()
                             ]
                           ),
                         ),
