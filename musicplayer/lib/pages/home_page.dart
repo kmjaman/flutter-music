@@ -125,6 +125,16 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w600,
                                 ),
                               ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(songs[index]['description'],
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                ),
+                              ),
                             ],
                           ),
                         ),
