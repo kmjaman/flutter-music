@@ -114,8 +114,18 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.greenAccent,
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                              )
-                            ]
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text(songs[index]['title'],
+                              style: TextStyle(
+                                fontSize: 15,
+                                color: Colors.white,
+                                fontWeight: FontWeight.w600,
+                                ),
+                              ),
+                            ],
                           ),
                         ),
                       );
