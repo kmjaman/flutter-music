@@ -28,31 +28,39 @@ class _AlbumPageState extends State<AlbumPage> {
               Container(
                 width: size.width,
                 height: 220,
-                decoration: BoxDecoration(color: Colors.green),
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(widget.song['img']),
+                    fit: BoxFit.cover
+                  ),
+                ),
               ),
             ],
           ),
-          Row(
-            children: [
-              IconButton(
-                icon: Icon(
-                  Icons.arrow_back_ios,
-                  color: Colors.white,
+          SafeArea(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }, 
                 ),
-                onPressed: () {
-                  Navigator.pop(context);
-                }, 
-              ),
-              IconButton(
-                icon: Icon(
-                  Icons.more_vert,
-                  color: Colors.white,
+                IconButton(
+                  icon: Icon(
+                    Icons.more_vert,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }, 
                 ),
-                onPressed: () {
-                  Navigator.pop(context);
-                }, 
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
