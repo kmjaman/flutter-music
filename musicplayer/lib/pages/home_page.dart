@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:musicplayer/json/songs_json.dart';
+import 'package:musicplayer/pages/album_page.dart';
 //import 'package:flutter_icons/flutter_icons.dart';
+import 'package:page_transition/page_transition.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({ Key? key }) : super(key: key);
@@ -103,6 +105,16 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(right: 30),
                         child: GestureDetector(
                           onTap: (){
+                            Navigator.push(
+                              context,                           
+                              PageTransition(
+                                alignment: Alignment.bottomCenter,
+                                child: AlbumPage(
+                                  song: songs[index],
+                                ),
+                                type: PageTransitionType.scale
+                              ),
+                            );
                           },
                           child: Column(
                             children: [
@@ -215,6 +227,16 @@ class _HomePageState extends State<HomePage> {
                         padding: const EdgeInsets.only(right: 30),
                         child: GestureDetector(
                           onTap: (){
+                            Navigator.push(
+                              context,                           
+                              PageTransition(
+                                alignment: Alignment.bottomCenter,
+                                child: AlbumPage(
+                                  song: songs[index + 5],
+                                ),
+                                type: PageTransitionType.scale
+                              ),
+                            );
                           },
                           child: Column(
                             children: [
