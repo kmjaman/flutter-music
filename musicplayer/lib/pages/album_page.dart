@@ -35,6 +35,38 @@ class _AlbumPageState extends State<AlbumPage> {
                   ),
                 ),
               ),
+              SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 30, right: 30),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(widget.song['title'],
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                      ),
+                    ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: Colors.grey, borderRadius: BorderRadius.circular(5)
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(
+                          left: 12, right: 12, top: 8, bottom: 8
+                        ),
+                        child: Text(
+                          'Subscribe',
+                          style: TextStyle(color: Colors.white),
+                        ),
+                      ),
+                    ),
+                  ]
+                ),
+              )
             ],
           ),
           SafeArea(
